@@ -2,16 +2,29 @@
 #include "Stack.h"
 
 int main() {
-    Stack stack;
+    Stack firstS, secondS, thirdS;
 
     for (int i = 1; i <= 10; i++) {
-        stack.push(i);
+        secondS.push(i);
+    }
+    for (int i = 1; i <= 100; i++) {
+        firstS.push(i);
     }
 
-    std::cout << "Popped elements: ";
-    while (!stack.isEmpty()) {
-        std::cout << stack.pop() << " ";
+    std::cout << "Popped elements (first): ";
+    while (!firstS.isEmpty()) {
+        std::cout << firstS.pop() << " ";
     }
+    std::cout << "\nPopped elements (second): ";
+    while (!secondS.isEmpty()) {
+        std::cout << secondS.pop() << " ";
+    }
+    std::cout << "\nPopped elements (third): ";
+    while (!thirdS.isEmpty()) {
+        std::cout << thirdS.pop() << " ";
+    }
+    
+    
     std::cout << std::endl;
 
     return 0;
