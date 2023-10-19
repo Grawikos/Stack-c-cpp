@@ -36,6 +36,25 @@ Stack::Stack(Stack &s){
 	} 
 }
 
+Stack& Stack::operator=(const Stack& s) {
+    if (this == &s) {
+        return *this;
+    }
+    if(top < s.top){
+		free(elements);
+		elements = (int*)malloc((s.top + 1) * sizeof(int));
+	}
+    maxElementId = s.maxElementId;
+    top = s.top;
+	
+
+	for(int i = 0; i <= s.top; i++){
+		elements[i] = s.elements[i];
+	}
+	
+    return *this;
+}
+
 void Stack::push(int element)
 {
 	if (top + 1 == maxElementId) {
