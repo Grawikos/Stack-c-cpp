@@ -7,6 +7,7 @@ public:
     Stack();
     ~Stack();
     Stack(Stack &s);
+    Stack& operator= (const Stack &s);
     void push(int element);
     int pop();
     bool isEmpty() const;
